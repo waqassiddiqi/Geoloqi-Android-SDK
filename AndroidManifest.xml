@@ -29,6 +29,17 @@
     <application
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar">
+        
+        <uses-library android:name="com.google.android.maps" />
+        
+        <activity android:name=".ui.MapView" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>                        
+        </activity>            
+        
+        <!--
         <activity
             android:name=".ui.LauncherActivity"
             android:label="@string/app_name">
@@ -45,6 +56,8 @@
         <activity
             android:name=".ui.SettingsActivity"
             android:label="@string/app_name" />
+                
+        -->
         
         <receiver
             android:name=".receiver.SampleReceiver"
@@ -55,11 +68,17 @@
             </intent-filter>
         </receiver>
         
-        <!-- Geoloqi SDK services, activities and receivers -->
+        
+        
+          
+        <!-- Geoloqi SDK services, activities and receivers -->                   
         <service
             android:name="com.geoloqi.android.sdk.service.LQService"
             android:exported="false" />
+                    
         <!-- NOTE: This receiver is required if you wish to enable C2DM support in the Geoloqi SDK. -->
+        
+        <!--
         <receiver
             android:name="com.geoloqi.android.sdk.receiver.LQDeviceMessagingReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -69,5 +88,7 @@
                 <category android:name="com.geoloqi.android.sample" />
             </intent-filter>
         </receiver>
+        
+        -->
     </application>
 </manifest>
